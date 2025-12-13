@@ -39,6 +39,16 @@
   transform: scaleX(-1);
 }
 
+/* 忽明忽暗效果 */
+.blink {
+  animation: blink 1.8s infinite alternate;
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0.4; }
+  100% { opacity: 1; }
+}
 </style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="首頁" tags="" position="150,150" size="100,100">
 
 su3cl3ji3ap7g42u4g6u yk3
@@ -123,28 +133,7 @@ su3cl3ji3ap7g42u4g6u yk3
 
 壓迫感消失了，取而代之的是一種無法言喻的詭異冷意。
 
-你仔細回想剛才的情況，
-警衛好像只在某個特定範圍內出現，
-而一旦你踏出那個範圍，他就會消失。
-
-你摸摸口袋，發現裡面不知何時多了一張濕掉的學生證，背面出現一句新的文字：
-
-(click-replace: ?lis)[
-    (align:&quot;=&gt;&lt;=&quot;)+(box:&quot;=XXXXXXXX=&quot;)[
-        (text-colour:red)[「如果不想死，就趕緊逃跑吧。
-        情況開始失控了，月亮變得很紅，已經沒時間了。」
-        
-        (link: &quot;......&quot;)[
-    (go-to: &quot;one&quot;)
-]
-        
-        ]
-    ]
-]
-
-|lis&gt;[查看學生證]
-
-
+(link: &quot;「這都是些什麼啊......」&quot;)[(go-to: &quot;Page5&quot;)]
 </tw-passagedata><tw-passagedata pid="5" name="Page3" tags="" position="525,150" size="100,100">呆站在這裡也不是辦法。
 你深吸一口氣，鼓起勇氣往那扇詭異的鐵門邁出一步。
 
@@ -167,30 +156,62 @@ su3cl3ji3ap7g42u4g6u yk3
     警衛像是憑空出現一般。
 
   
-    (link: &quot;......&quot;)[ (go-to: &quot;Page3.5&quot;) ]]</tw-passagedata><tw-passagedata pid="6" name="one" tags="" position="925,150" size="100,100">你有些不明白這句話的意思，但直覺告訴你不會是什麼好事。
+    (link: &quot;......&quot;)[ (go-to: &quot;Page3.5&quot;) ]]</tw-passagedata><tw-passagedata pid="6" name="one" tags="" position="1025,150" size="100,100">你有些不明白這句話的意思，但直覺告訴你不會是什麼好事。
 得找到方法逃出這裡。
 
-站在門口的你決定
+「得先找到能夠出去的地方才行......」
 
-[[前往 操場]]
-[[前往 校內公車站]]
-[[前往 行政大樓]]</tw-passagedata><tw-passagedata pid="7" name="Page3.5" tags="" position="650,150" size="100,100">警衛彎下身，與你幾乎貼臉般靠近。
+
+
+&#39;&#39;&lt;span style=&quot;font-size:2em;&quot;&gt;嗡——&lt;/span&gt; &#39;&#39;
+
+你的腦中突然一陣劇痛。
+&lt;!-- 設定控制變數 --&gt;
+(set: $choiceMade to false)
+
+&lt;!-- hook 放選項 --&gt;
+|choices&gt;[
+    (link: &quot;「我想起來我為什麼在這裡了。」&quot;)[
+        (set: $choiceMade to true)
+        (replace: ?choices)[
+            「我想起來我為什麼在這裡了。」
+            
+            [[(留在原地)]]
+            [[(前往 中正圖書館)]]
+            [[(前往 校內公車站)]]
+            [[(前往 行政大樓)]]
+        ]
+    ]
+    
+    (link: &quot;「我還是想不起來我為什麼在這裡。」&quot;)[
+        (set: $choiceMade to true)
+        (replace: ?choices)[
+            「我還是想不起來我為什麼在這裡。」
+            
+            [[(留在原地)]]
+            [[(前往 操場)]]
+            [[(前往 行政大樓)]]
+        ]
+    ]
+]
+
+   
+
+ 
+ </tw-passagedata><tw-passagedata pid="7" name="Page3.5" tags="" position="650,150" size="100,100">警衛彎下身，與你幾乎貼臉般靠近。
 他的呼吸冰冷、潮濕，口腔的惡臭噴鼻而來。
 
-&lt;span class=&quot;mirror shake shadow&quot; style=&quot;font-size:4em;&quot;&gt;「你……沒有資格出去。」&lt;/span&gt;
-
+(align:&quot;==&gt;&quot;)[&lt;span class=&quot;mirror shake shadow&quot; style=&quot;font-size:3em;&quot;&gt;「你……沒有資格出去。」&lt;/span&gt;]
 
 他以一種不自然的語調說道，每個字像是卡在喉嚨裡才擠出來。
 
 一股恐懼感油然而生。
 
-(link: &quot;......&quot;)[
-    (go-to: &quot;Page4&quot;)
+(link: &quot;「......」&quot;)[(go-to: &quot;Page4&quot;)
+
 ]
-[[直接衝過去]]</tw-passagedata><tw-passagedata pid="8" name="前往 校內公車站" tags="" position="1050,150" size="100,100"></tw-passagedata><tw-passagedata pid="9" name="前往 行政大樓" tags="" position="1050,25" size="100,100"></tw-passagedata><tw-passagedata pid="10" name="前往 操場" tags="" position="900,275" size="100,100"></tw-passagedata><tw-passagedata pid="11" name="直接衝過去" tags="" position="650,275" size="100,100">你違反了資格......
 
-
-(align:&quot;=&gt;&lt;=&quot;)+(box:&quot;=XXXXXXXX=&quot;)+(text-colour:red)[&lt;h1&gt;[你 已 死 亡]&lt;h1&gt;]</tw-passagedata><tw-passagedata pid="12" name="注意事項" tags="" position="150,275" size="100,100">[[開始遊戲]] [[開始遊戲]] 
+[[(直接衝過去)]]</tw-passagedata><tw-passagedata pid="8" name="注意事項" tags="" position="150,275" size="100,100">[[開始遊戲]] [[開始遊戲]] 
 [[開始遊戲]] [[開始遊戲]] 
 [[開始遊戲]] [[開始遊戲]] 
 [[開始遊戲]] [[開始遊戲]] 
@@ -202,10 +223,10 @@ su3cl3ji3ap7g42u4g6u yk3
 [[開始遊戲]] [[開始遊戲]] 
 [[開始遊戲]] [[開始遊戲]] 
 [[開始遊戲]] [[開始遊戲]] 
-[[開始遊戲]] [[開始遊戲]] </tw-passagedata><tw-passagedata pid="13" name="聯絡我們" tags="" position="275,275" size="100,100">&lt;a href=&quot;https://forms.gle/hy3LTUE6rSUTrMGx6&quot; target=&quot;_blank&quot;&gt;聯絡我們！&lt;/a&gt;&lt;a href=&quot;https://forms.gle/hy3LTUE6rSUTrMGx6&quot; target=&quot;_blank&quot;&gt;聯絡我們！&lt;/a&gt;
+[[開始遊戲]] [[開始遊戲]] </tw-passagedata><tw-passagedata pid="9" name="聯絡我們" tags="" position="275,275" size="100,100">&lt;a href=&quot;https://forms.gle/hy3LTUE6rSUTrMGx6&quot; target=&quot;_blank&quot;&gt;聯絡我們！&lt;/a&gt;&lt;a href=&quot;https://forms.gle/hy3LTUE6rSUTrMGx6&quot; target=&quot;_blank&quot;&gt;聯絡我們！&lt;/a&gt;
 &lt;a href=&quot;https://forms.gle/hy3LTUE6rSUTrMGx6&quot; target=&quot;_blank&quot;&gt;聯絡我們！&lt;/a&gt;&lt;a href=&quot;https://forms.gle/hy3LTUE6rSUTrMGx6&quot; target=&quot;_blank&quot;&gt;聯絡我們！&lt;/a&gt;
 &lt;a href=&quot;https://forms.gle/hy3LTUE6rSUTrMGx6&quot; target=&quot;_blank&quot;&gt;聯絡我們！&lt;/a&gt;&lt;a href=&quot;https://forms.gle/hy3LTUE6rSUTrMGx6&quot; target=&quot;_blank&quot;&gt;聯絡我們！&lt;/a&gt;
-&lt;a href=&quot;https://forms.gle/hy3LTUE6rSUTrMGx6&quot; target=&quot;_blank&quot;&gt;聯絡我們！&lt;/a&gt;&lt;a href=&quot;https://forms.gle/hy3LTUE6rSUTrMGx6&quot; target=&quot;_blank&quot;&gt;聯絡我們！&lt;/a&gt;&lt;a href=&quot;https://forms.gle/hy3LTUE6rSUTrMGx6&quot; target=&quot;_blank&quot;&gt;聯絡我們！&lt;/a&gt;&lt;a href=&quot;https://forms.gle/hy3LTUE6rSUTrMGx6&quot; target=&quot;_blank&quot;&gt;聯絡我們！&lt;/a&gt;&lt;a href=&quot;https://forms.gle/hy3LTUE6rSUTrMGx6&quot; target=&quot;_blank&quot;&gt;聯絡我們！&lt;/a&gt;&lt;a href=&quot;https://forms.gle/hy3LTUE6rSUTrMGx6&quot; target=&quot;_blank&quot;&gt;聯絡我們！&lt;/a&gt;&lt;a href=&quot;https://forms.gle/hy3LTUE6rSUTrMGx6&quot; target=&quot;_blank&quot;&gt;聯絡我們！&lt;/a&gt;&lt;a href=&quot;https://forms.gle/hy3LTUE6rSUTrMGx6&quot; target=&quot;_blank&quot;&gt;聯絡我們！&lt;/a&gt;&lt;a href=&quot;https://forms.gle/hy3LTUE6rSUTrMGx6&quot; target=&quot;_blank&quot;&gt;聯絡我們！&lt;/a&gt;&lt;a href=&quot;https://youtu.be/dQw4w9WgXcQ?si=PbHEdhX3DOdYYRrA&quot; target=&quot;_blank&quot;&gt;不能聯絡我們！&lt;/a&gt;&lt;a href=&quot;https://forms.gle/hy3LTUE6rSUTrMGx6&quot; target=&quot;_blank&quot;&gt;聯絡我們！&lt;/a&gt;&lt;a href=&quot;https://forms.gle/hy3LTUE6rSUTrMGx6&quot; target=&quot;_blank&quot;&gt;聯絡我們！&lt;/a&gt;&lt;a href=&quot;https://forms.gle/hy3LTUE6rSUTrMGx6&quot; target=&quot;_blank&quot;&gt;聯絡我們！&lt;/a&gt;&lt;a href=&quot;https://forms.gle/hy3LTUE6rSUTrMGx6&quot; target=&quot;_blank&quot;&gt;聯絡我們！&lt;/a&gt;&lt;a href=&quot;https://forms.gle/hy3LTUE6rSUTrMGx6&quot; target=&quot;_blank&quot;&gt;聯絡我們！&lt;/a&gt;&lt;a href=&quot;https://forms.gle/hy3LTUE6rSUTrMGx6&quot; target=&quot;_blank&quot;&gt;聯絡我們！&lt;/a&gt;&lt;a href=&quot;https://forms.gle/hy3LTUE6rSUTrMGx6&quot; target=&quot;_blank&quot;&gt;聯絡我們！&lt;/a&gt;&lt;a href=&quot;https://forms.gle/hy3LTUE6rSUTrMGx6&quot; target=&quot;_blank&quot;&gt;聯絡我們！&lt;/a&gt;&lt;a href=&quot;https://youtu.be/dQw4w9WgXcQ?si=PbHEdhX3DOdYYRrA&quot; target=&quot;_blank&quot;&gt;不能聯絡我們！&lt;/a&gt;&lt;a href=&quot;https://forms.gle/hy3LTUE6rSUTrMGx6&quot; target=&quot;_blank&quot;&gt;聯絡我們！&lt;/a&gt;&lt;a href=&quot;https://youtu.be/dQw4w9WgXcQ?si=PbHEdhX3DOdYYRrA&quot; target=&quot;_blank&quot;&gt;不能聯絡我們！&lt;/a&gt;&lt;a href=&quot;https://youtu.be/dQw4w9WgXcQ?si=PbHEdhX3DOdYYRrA&quot; target=&quot;_blank&quot;&gt;不能聯絡我們！&lt;/a&gt;&lt;a href=&quot;https://youtu.be/dQw4w9WgXcQ?si=PbHEdhX3DOdYYRrA&quot; target=&quot;_blank&quot;&gt;不能聯絡我們！&lt;/a&gt;</tw-passagedata><tw-passagedata pid="14" name="結束遊戲" tags="" position="150,400" size="100,100">
+&lt;a href=&quot;https://forms.gle/hy3LTUE6rSUTrMGx6&quot; target=&quot;_blank&quot;&gt;聯絡我們！&lt;/a&gt;&lt;a href=&quot;https://forms.gle/hy3LTUE6rSUTrMGx6&quot; target=&quot;_blank&quot;&gt;聯絡我們！&lt;/a&gt;&lt;a href=&quot;https://forms.gle/hy3LTUE6rSUTrMGx6&quot; target=&quot;_blank&quot;&gt;聯絡我們！&lt;/a&gt;&lt;a href=&quot;https://forms.gle/hy3LTUE6rSUTrMGx6&quot; target=&quot;_blank&quot;&gt;聯絡我們！&lt;/a&gt;&lt;a href=&quot;https://forms.gle/hy3LTUE6rSUTrMGx6&quot; target=&quot;_blank&quot;&gt;聯絡我們！&lt;/a&gt;&lt;a href=&quot;https://forms.gle/hy3LTUE6rSUTrMGx6&quot; target=&quot;_blank&quot;&gt;聯絡我們！&lt;/a&gt;&lt;a href=&quot;https://forms.gle/hy3LTUE6rSUTrMGx6&quot; target=&quot;_blank&quot;&gt;聯絡我們！&lt;/a&gt;&lt;a href=&quot;https://forms.gle/hy3LTUE6rSUTrMGx6&quot; target=&quot;_blank&quot;&gt;聯絡我們！&lt;/a&gt;&lt;a href=&quot;https://forms.gle/hy3LTUE6rSUTrMGx6&quot; target=&quot;_blank&quot;&gt;聯絡我們！&lt;/a&gt;&lt;a href=&quot;https://youtu.be/dQw4w9WgXcQ?si=PbHEdhX3DOdYYRrA&quot; target=&quot;_blank&quot;&gt;不能聯絡我們！&lt;/a&gt;&lt;a href=&quot;https://forms.gle/hy3LTUE6rSUTrMGx6&quot; target=&quot;_blank&quot;&gt;聯絡我們！&lt;/a&gt;&lt;a href=&quot;https://forms.gle/hy3LTUE6rSUTrMGx6&quot; target=&quot;_blank&quot;&gt;聯絡我們！&lt;/a&gt;&lt;a href=&quot;https://forms.gle/hy3LTUE6rSUTrMGx6&quot; target=&quot;_blank&quot;&gt;聯絡我們！&lt;/a&gt;&lt;a href=&quot;https://forms.gle/hy3LTUE6rSUTrMGx6&quot; target=&quot;_blank&quot;&gt;聯絡我們！&lt;/a&gt;&lt;a href=&quot;https://forms.gle/hy3LTUE6rSUTrMGx6&quot; target=&quot;_blank&quot;&gt;聯絡我們！&lt;/a&gt;&lt;a href=&quot;https://forms.gle/hy3LTUE6rSUTrMGx6&quot; target=&quot;_blank&quot;&gt;聯絡我們！&lt;/a&gt;&lt;a href=&quot;https://forms.gle/hy3LTUE6rSUTrMGx6&quot; target=&quot;_blank&quot;&gt;聯絡我們！&lt;/a&gt;&lt;a href=&quot;https://forms.gle/hy3LTUE6rSUTrMGx6&quot; target=&quot;_blank&quot;&gt;聯絡我們！&lt;/a&gt;&lt;a href=&quot;https://youtu.be/dQw4w9WgXcQ?si=PbHEdhX3DOdYYRrA&quot; target=&quot;_blank&quot;&gt;不能聯絡我們！&lt;/a&gt;&lt;a href=&quot;https://forms.gle/hy3LTUE6rSUTrMGx6&quot; target=&quot;_blank&quot;&gt;聯絡我們！&lt;/a&gt;&lt;a href=&quot;https://youtu.be/dQw4w9WgXcQ?si=PbHEdhX3DOdYYRrA&quot; target=&quot;_blank&quot;&gt;不能聯絡我們！&lt;/a&gt;&lt;a href=&quot;https://youtu.be/dQw4w9WgXcQ?si=PbHEdhX3DOdYYRrA&quot; target=&quot;_blank&quot;&gt;不能聯絡我們！&lt;/a&gt;&lt;a href=&quot;https://youtu.be/dQw4w9WgXcQ?si=PbHEdhX3DOdYYRrA&quot; target=&quot;_blank&quot;&gt;不能聯絡我們！&lt;/a&gt;</tw-passagedata><tw-passagedata pid="10" name="結束遊戲" tags="" position="150,400" size="100,100">
 
 (align:&quot;=&gt;&lt;=&quot;)+(box:&quot;X&quot;)[
   (text-colour:red)[
@@ -214,17 +235,102 @@ su3cl3ji3ap7g42u4g6u yk3
     &lt;/h1&gt;
   ]
 ]
-</tw-passagedata><tw-passagedata pid="15" name="離開遊戲" tags="" position="275,400" size="100,100">
+</tw-passagedata><tw-passagedata pid="11" name="離開遊戲" tags="" position="275,400" size="100,100">
 
 
 (text-colour:grey)[(align:&quot;=&gt;&lt;=&quot;)+(box:&quot;X&quot;)[太遲了太遲了太遲了太遲了太遲了太遲了太遲了太遲了太遲了太遲了太遲了太遲了太遲了太遲了太遲了太遲了太遲了太遲了太遲了太遲了太遲了太遲了]](align:&quot;=&gt;&lt;=&quot;)+(box:&quot;X&quot;)[&lt;span class=&quot;mirror&quot;&gt;(text-colour:red)[&lt;h1&gt;太遲了
 (text-colour:red)[你來不及離開了]&lt;/h1&gt;]&lt;/span&gt;](text-colour:grey)[(align:&quot;=&gt;&lt;=&quot;)+(box:&quot;X&quot;)[太遲了太遲了太遲了太遲了太遲了太遲了太遲了太遲了太遲了太遲了太遲了太遲了太遲了太遲了太遲了太遲了太遲了太遲了太遲了太遲了太遲了太遲了]]
-</tw-passagedata><tw-passagedata pid="16" name="Untitled Passage" tags="" position="150,25" size="100,100">不知道從哪裡開始，四周漫出一層薄白的霧，像是有什麼看不見的手正把迷霧從推到你身旁。
-霧的另一端看不見任何人。</tw-passagedata><tw-passagedata pid="17" name="「我知道為什麼我在這裡。」" tags="" position="350,25" size="100,100">
+</tw-passagedata><tw-passagedata pid="12" name="Untitled Passage" tags="" position="150,25" size="100,100">不知道從哪裡開始，四周漫出一層薄白的霧，像是有什麼看不見的手正把迷霧從推到你身旁。
+霧的另一端看不見任何人。</tw-passagedata><tw-passagedata pid="13" name="「我知道為什麼我在這裡。」" tags="" position="350,25" size="100,100">
 
-</tw-passagedata><tw-passagedata pid="18" name="「我ㄓ道為什麼我ㄗㄞ這裡。」" tags="" position="250,25" size="100,100">
+</tw-passagedata><tw-passagedata pid="14" name="「我ㄓ道為什麼我ㄗㄞ這裡。」" tags="" position="250,25" size="100,100">
 
-(align:&quot;=&gt;&lt;=&quot;)+(box:&quot;X&quot;)[(text-colour:red)[&lt;h1&gt;你　早　就　知　道　了　&lt;/h1&gt;]]</tw-passagedata></tw-storydata>
+(align:&quot;=&gt;&lt;=&quot;)+(box:&quot;X&quot;)[(text-colour:red)[&lt;h1&gt;你　早　就　知　道　了　&lt;/h1&gt;]]</tw-passagedata><tw-passagedata pid="15" name="(直接衝過去)" tags="" position="650,275" size="100,100">你違反了資格......
+
+
+(align:&quot;=&gt;&lt;=&quot;)+(box:&quot;X&quot;)[(text-colour:red)[&lt;h1&gt;[你 已 死 亡]&lt;h1&gt;]]
+
+
+</tw-passagedata><tw-passagedata pid="16" name="Page5" tags="" position="900,150" size="100,100">你仔細回想剛才的情況，
+警衛好像只在某個特定範圍內出現，
+而一旦你踏出那個範圍，他就會消失。
+
+你摸摸口袋，發現裡面不知何時多了一張濕掉的學生證，
+背面出現一句忽隱忽現的文字：
+
+(click-replace: ?lis)[
+    (align:&quot;=&gt;&lt;=&quot;)+(box:&quot;X&quot;)[
+        (text-colour:red)[
+            &lt;span class=&quot;blink&quot;&gt;「如果不想死，就趕緊逃跑吧。
+            情況開始失控了，月亮變得很紅，已經沒時間了。」&lt;/span&gt;
+        ]
+    ]
+   
+        (link: &quot;「什麼啊？」&quot;)[(go-to: &quot;one&quot;)] 
+    ]
+
+|lis&gt;[查看學生證]
+
+</tw-passagedata><tw-passagedata pid="17" name="(留在原地)" tags="" position="775,275" size="100,100"></tw-passagedata><tw-passagedata pid="18" name="(前往 中正圖書館)" tags="" position="900,275" size="100,100">你想起來了。
+
+現在是期末考週前的夜晚，為了避開圖書館內的人擠人，你選擇躲進中正圖書館旁的「狗洞」唸書。
+
+這裡雖然半露天，但很安靜。
+
+你實在太累了，趴在桌上不知不覺睡著了。
+
+再度睜眼你就在噴水池裡面了。
+
+(link: &quot;「先去狗洞看一眼吧。」&quot;)[(go-to: &quot;111&quot;)]
+</tw-passagedata><tw-passagedata pid="19" name="(前往 校內公車站)" tags="" position="1025,275" size="100,100"></tw-passagedata><tw-passagedata pid="20" name="(前往 行政大樓)" tags="" position="1150,275" size="100,100"></tw-passagedata><tw-passagedata pid="21" name="(前往 操場)" tags="" position="1275,275" size="100,100"></tw-passagedata><tw-passagedata pid="22" name="111" tags="" position="900,375" size="100,100">四周安靜得可怕。
+
+平日這條連通往圖書館正門的階梯通道總會有風聲、蟲鳴聲，或是遠處指南路上的車聲，但現在——什麼都沒有。
+
+
+現在狗洞裡面只有上方那盞老舊的日光燈發出瀕死的「滋滋」電流聲。
+
+幸運的是，你的背包還在原位。
+
+你擠過周遭的人和桌椅，跑向自己的位置。
+
+你拿出手機想看時間，卻發現螢幕全黑，不管怎麼按都無法開機。
+
+「破手機！」
+
+拿到了背包的你，站起身準備離開，轉頭看向出口，卻愣住了。
+
+(link:&quot;「靠......不是。」&quot;)[(go-to: &quot;112&quot;)]
+</tw-passagedata><tw-passagedata pid="23" name="112" tags="" position="900,475" size="100,100">原本應該是通往圖書館廣場的階梯缺口，此刻被一面粗糙的水泥牆完全封死。
+
+你轉向另一頭，發現另一側的出口也變成了同樣的水泥牆。
+
+你被封在「狗洞」裡了。
+
+
+[[觀察四周]]
+
+[[嘗試撞擊牆壁]]
+
+(link:&quot;向//旁邊的人//求救&quot;)[(go-to: &quot;向旁邊的人求救&quot;)]</tw-passagedata><tw-passagedata pid="24" name="嘗試撞擊牆壁" tags="" position="1025,500" size="100,100"></tw-passagedata><tw-passagedata pid="25" name="觀察四周" tags="" position="775,500" size="100,100">就在這時，牆上的掛鐘開始(text-colour:red)[逆時針轉動]，發出刺耳的滴答聲。
+
+(align:&quot;==&gt;&quot;)[//&#39;&#39;滴答滴答滴答滴答滴答滴答&#39;&#39;//]
+
+「這裡什麼時候有掛鐘了！？」
+
+(align:&quot;==&gt;&quot;)[&#39;&#39;//滴答滴答滴答滴答滴答滴答//&#39;&#39;]
+
+指針飛速轉動著——
+
+當指針逆轉到9:30時，停住了。
+
+(link:&quot;「又怎麼了？！」&quot;)[「又怎麼了？！」
+&lt;h1 style=&quot;display:inline-block; animation: shake 0.15s infinite;&quot;&gt;
+       [(text-colour:red)[ (align:&quot;=&gt;&lt;=&quot;)+(box:&quot;X&quot;)[牆 壁       &lt;/br&gt;裂       
+          &lt;/br&gt;
+                         (align:&quot;==&gt;&quot;)[裂開] &lt;/br&gt; 開了]]]　
+    &lt;/h1&gt;
+  ]
+</tw-passagedata><tw-passagedata pid="26" name="向旁邊的人求救" tags="" position="900,575" size="100,100"></tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim
