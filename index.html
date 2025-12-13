@@ -49,6 +49,11 @@
   50% { opacity: 0.4; }
   100% { opacity: 1; }
 }
+
+.vertical-flip {
+  display: inline-block;
+  transform: scaleY(-1);
+}
 </style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="首頁" tags="" position="150,150" size="100,100">
 
 su3cl3ji3ap7g42u4g6u yk3
@@ -257,21 +262,17 @@ su3cl3ji3ap7g42u4g6u yk3
 
 你摸摸口袋，發現裡面不知何時多了一張濕掉的學生證，
 背面出現一句忽隱忽現的文字：
-
-(click-replace: ?lis)[
-    (align:&quot;=&gt;&lt;=&quot;)+(box:&quot;X&quot;)[
-        (text-colour:red)[
+(click-replace: ?lis)[(align:&quot;=&gt;&lt;=&quot;)+(box:&quot;X&quot;)[  (text-colour:red)[
             &lt;span class=&quot;blink&quot;&gt;「如果不想死，就趕緊逃跑吧。
-            情況開始失控了，月亮變得很紅，已經沒時間了。」&lt;/span&gt;
+            情況開始失控了，月亮變得很紅，已經沒時間了。」&lt;/span&gt;]
         ]
-    ]
+    
    
         (link: &quot;「什麼啊？」&quot;)[(go-to: &quot;one&quot;)] 
-    ]
-
+]
 |lis&gt;[查看學生證]
 
-</tw-passagedata><tw-passagedata pid="17" name="(留在原地)" tags="" position="775,275" size="100,100"></tw-passagedata><tw-passagedata pid="18" name="(前往 中正圖書館)" tags="" position="900,275" size="100,100">你想起來了。
+</tw-passagedata><tw-passagedata pid="17" name="(留在原地)" tags="" position="1025,25" size="100,100"></tw-passagedata><tw-passagedata pid="18" name="(前往 中正圖書館)" tags="" position="900,275" size="100,100">你想起來了。
 
 現在是期末考週前的夜晚，為了避開圖書館內的人擠人，你選擇躲進中正圖書館旁的「狗洞」唸書。
 
@@ -282,7 +283,7 @@ su3cl3ji3ap7g42u4g6u yk3
 再度睜眼你就在噴水池裡面了。
 
 (link: &quot;「先去狗洞看一眼吧。」&quot;)[(go-to: &quot;111&quot;)]
-</tw-passagedata><tw-passagedata pid="19" name="(前往 校內公車站)" tags="" position="1025,275" size="100,100"></tw-passagedata><tw-passagedata pid="20" name="(前往 行政大樓)" tags="" position="1150,275" size="100,100"></tw-passagedata><tw-passagedata pid="21" name="(前往 操場)" tags="" position="1275,275" size="100,100"></tw-passagedata><tw-passagedata pid="22" name="111" tags="" position="900,375" size="100,100">四周安靜得可怕。
+</tw-passagedata><tw-passagedata pid="19" name="(前往 校內公車站)" tags="" position="1200,350" size="100,100"></tw-passagedata><tw-passagedata pid="20" name="(前往 行政大樓)" tags="" position="1200,200" size="100,100"></tw-passagedata><tw-passagedata pid="21" name="(前往 操場)" tags="" position="1200,50" size="100,100"></tw-passagedata><tw-passagedata pid="22" name="111" tags="" position="900,375" size="100,100">四周安靜得可怕。
 
 平日這條連通往圖書館正門的階梯通道總會有風聲、蟲鳴聲，或是遠處指南路上的車聲，但現在——什麼都沒有。
 
@@ -311,13 +312,30 @@ su3cl3ji3ap7g42u4g6u yk3
 
 [[嘗試撞擊牆壁]]
 
-(link:&quot;向//旁邊的人//求救&quot;)[(go-to: &quot;向旁邊的人求救&quot;)]</tw-passagedata><tw-passagedata pid="24" name="嘗試撞擊牆壁" tags="" position="1025,500" size="100,100"></tw-passagedata><tw-passagedata pid="25" name="觀察四周" tags="" position="775,500" size="100,100">就在這時，牆上的掛鐘開始(text-colour:red)[逆時針轉動]，發出刺耳的滴答聲。
+(link:&quot;向//旁邊的人//求救&quot;)[(go-to: &quot;向旁邊的人求救&quot;)]</tw-passagedata><tw-passagedata pid="24" name="嘗試撞擊牆壁" tags="" position="1025,500" size="100,100">你咬牙，用身體撞向牆壁。
 
-(align:&quot;==&gt;&quot;)[//&#39;&#39;滴答滴答滴答滴答滴答滴答&#39;&#39;//]
+牆紋絲不動......
+
+不對！你察覺時，已為時已晚。
+
+「這是什麼！？」
+
+牆面在撞擊下濕濕地凹陷，像踩進一層腐爛的肉。
+
+冰冷的觸感黏上你的皮膚，
+牆面蠕動著，把你拖住。
+
+你還沒來得及掙扎，
+牆就收縮起來，
+把你一點一點吃了進去。
+
+(link:&quot;「等、等等！？」&quot;)[(go-to:&quot;112-3&quot;)]</tw-passagedata><tw-passagedata pid="25" name="觀察四周" tags="" position="775,500" size="100,100">就在這時，牆上的掛鐘開始(text-colour:red)[逆時針轉動]，發出刺耳的滴答聲。
+
+(align:&quot;==&gt;&quot;)[//&#39;&#39;－ 滴答滴答滴答滴答滴答滴答&#39;&#39;//]
 
 「這裡什麼時候有掛鐘了！？」
 
-(align:&quot;==&gt;&quot;)[&#39;&#39;//滴答滴答滴答滴答滴答滴答//&#39;&#39;]
+(align:&quot;==&gt;&quot;)[&#39;&#39;//- 滴答滴答滴答滴答滴答滴答//&#39;&#39;]
 
 指針飛速轉動著——
 
@@ -329,8 +347,103 @@ su3cl3ji3ap7g42u4g6u yk3
           &lt;/br&gt;
                          (align:&quot;==&gt;&quot;)[裂開] &lt;/br&gt; 開了]]]　
     &lt;/h1&gt;
+    
+  (link:&quot;「？！」&quot;)[(go-to:&quot;112-1&quot;)]
   ]
-</tw-passagedata><tw-passagedata pid="26" name="向旁邊的人求救" tags="" position="900,575" size="100,100"></tw-passagedata></tw-storydata>
+</tw-passagedata><tw-passagedata pid="26" name="向旁邊的人求救" tags="" position="900,575" size="100,100">你下意識向身旁的人求救。
+
+話還沒出口，你就愣住了。
+
+你發現「他們」腳下沒有影子，
+臉的輪廓模糊得像是被刻意抹掉了一樣。
+
+「啊......」你的聲音卡在喉嚨。
+
+但仍有人因為你的聲音回過頭。
+
+你與「(text-colour:red)[他]」對上了視線。
+
+「(text-colour:red)[他]」笑了。
+
+(link: &quot;「你在(text-colour:red)[&lt;span class=&#39;vertical-flip&#39;&gt;看我嗎&lt;/span&gt;]？」&quot;)[(go-to: &quot;112-5&quot;)]
+</tw-passagedata><tw-passagedata pid="27" name="112-1" tags="" position="675,500" size="100,100">你朝著無止盡的黑暗掉落。
+
+......
+......
+......
+......
+......
+(link:&quot;......&quot;)[(go-to:&quot;112-2&quot;)]</tw-passagedata><tw-passagedata pid="28" name="112-2" tags="" position="575,500" size="100,100">今天的晚風涼得有些反常。
+你坐在狗洞裡，翻著即將到來的期末考內容，卻怎麼也讀不進去。
+
+「對了，期末考是什麼時候啊？」
+
+這個念頭突然冒出來，你心頭一緊。
+
+你有些懊惱，怎麼可以連這麼重要的事情都忘記了。
+
+你抬頭看了一眼掛鐘。
+
+秒針滴答作響，聲音在夜裡顯得異常清晰。
+
+「幸好現在才九點半！」
+
+
+
+外頭的(text-colour:red)[紅色月亮]高懸著。
+
+
+
+</tw-passagedata><tw-passagedata pid="29" name="112-3" tags="" position="1125,500" size="100,100">你被無止盡的黑暗吞噬。
+
+......
+......
+......
+......
+......
+(link:&quot;......&quot;)[(go-to:&quot;112-4&quot;)]</tw-passagedata><tw-passagedata pid="30" name="112-4" tags="" position="1225,500" size="100,100">今天的晚風涼得有些反常。
+你坐在狗洞裡，翻著即將到來的期末考內容，卻怎麼也讀不進去。
+
+「對了，期末考是什麼時候啊？」
+
+這個念頭突然冒出來，你心頭一緊。
+
+你有些懊惱，怎麼可以連這麼重要的事情都忘記了。
+
+你走到牆壁邊，牆面在你靠近時自然地讓開了一點。
+
+
+
+外頭的(text-colour:red)[紅色月亮]高懸著。</tw-passagedata><tw-passagedata pid="31" name="112-5" tags="" position="900,675" size="100,100">你的視野一片黑暗。
+
+......
+......
+......
+......
+......
+(link:&quot;......&quot;)[(go-to:&quot;112-6&quot;)]</tw-passagedata><tw-passagedata pid="32" name="112-6" tags="" position="900,775" size="100,100">今天的晚風涼得有些反常。
+你坐在狗洞裡，翻著即將到來的期末考內容，卻怎麼也讀不進去。
+
+&lt;span class=&quot;vertical-flip&quot;&gt;「//對了，期末考是什麼時候啊？//」&lt;/span&gt;
+
+
+這個念頭突然冒出來，你心頭一緊。
+
+你有些懊惱，怎麼可以連這麼重要的事情都忘記了。
+
+你轉頭向旁邊的人搭話。
+
+&lt;span class=&quot;vertical-flip&quot;&gt;「//你知道什麼時候考試嗎？//」&lt;/span&gt;
+
+
+你覺得他的面容很熟悉，但想不起來在哪裡見過。
+
+你旁邊的人咧開嘴，笑而不語。
+
+
+
+外頭的(text-colour:red)[紅色月亮]高懸著。
+</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim
