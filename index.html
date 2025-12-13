@@ -55,20 +55,17 @@
   transform: scaleY(-1);
 }
 
-.marquee-container {
-  width: 100%; /* 佔滿整個螢幕寬度 */
-  overflow: hidden; /* 隱藏超出範圍的文字 */
-}
-
 .marquee {
   display: inline-block;
-  white-space: nowrap; /* 文字不換行 */
-  animation: marquee 15s linear infinite; /* 跑馬燈速度 */
+  transform: translateX(100%); /* 起點在右邊 */
+  white-space: nowrap;  /* 文字不換行 */
+  animation: marquee 10s linear infinite;
 }
 
 @keyframes marquee {
-  0% { transform: translateX(70%); }   /* 從右側進入 */
-  100% { transform: translateX(-100%); } /* 從左側離開 */
+  0% { transform: translateX(100%); }
+  10% { transform: translateX(0); }   /* 前 5% 迅速進入畫面 */
+  100% { transform: translateX(-100%); }
 }
 </style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="首頁" tags="" position="150,150" size="100,100">
 
@@ -287,7 +284,7 @@ su3cl3ji3ap7g42u4g6u yk3
 ]
 |lis&gt;[查看學生證]
 
-</tw-passagedata><tw-passagedata pid="14" name="(留在原地)" tags="" position="1025,25" size="100,100"></tw-passagedata><tw-passagedata pid="15" name="(前往 中正圖書館)" tags="" position="900,275" size="100,100">你想起來了。
+</tw-passagedata><tw-passagedata pid="14" name="(留在原地)" tags="" position="1000,25" size="100,100"></tw-passagedata><tw-passagedata pid="15" name="(前往 中正圖書館)" tags="" position="900,275" size="100,100">你想起來了。
 
 現在是期末考週前的夜晚，為了避開圖書館內的人擠人，你選擇躲進中正圖書館旁的「狗洞」唸書。
 
@@ -298,7 +295,19 @@ su3cl3ji3ap7g42u4g6u yk3
 再度睜眼你就在噴水池裡面了。
 
 (link: &quot;「先去狗洞看一眼吧。」&quot;)[(go-to: &quot;111&quot;)]
-</tw-passagedata><tw-passagedata pid="16" name="(前往 校內公車站)" tags="" position="1200,350" size="100,100"></tw-passagedata><tw-passagedata pid="17" name="(前往 行政大樓)" tags="" position="1200,200" size="100,100"></tw-passagedata><tw-passagedata pid="18" name="(前往 操場)" tags="" position="1200,50" size="100,100"></tw-passagedata><tw-passagedata pid="19" name="111" tags="" position="900,375" size="100,100">四周安靜得可怕。
+</tw-passagedata><tw-passagedata pid="16" name="(前往 校內公車站)" tags="" position="1200,300" size="100,100"></tw-passagedata><tw-passagedata pid="17" name="(前往 行政大樓)" tags="" position="900,25" size="100,100"></tw-passagedata><tw-passagedata pid="18" name="(前往 操場)" tags="" position="1200,100" size="100,100">你還是想不起你為什麼在這。
+
+你決定往操場的方向找看看有沒有線索。
+
+在濃重的迷霧中，你隱約看到三岔路
+
+[[向前走]]
+
+[[向右走]]
+
+[[向左走]]
+
+</tw-passagedata><tw-passagedata pid="19" name="111" tags="" position="900,375" size="100,100">四周安靜得可怕。
 
 平日這條連通往圖書館正門的階梯通道總會有風聲、蟲鳴聲，或是遠處指南路上的車聲，但現在——什麼都沒有。
 
@@ -458,7 +467,187 @@ su3cl3ji3ap7g42u4g6u yk3
 
 
 外頭的(text-colour:red)[紅色月亮]高懸著。
-</tw-passagedata></tw-storydata>
+</tw-passagedata><tw-passagedata pid="30" name="向前走" tags="" position="1500,0" size="100,100">你還是想不起你為什麼在這。
+
+你決定往操場的方向找看看有沒有線索。
+
+在濃重的迷霧中，你隱約看到三岔路
+
+(link:&quot;向前走&quot;)[(go-to:&quot;124&quot;)]
+
+[[向右走]]
+
+(link:&quot;向左走&quot;)[(go-to:&quot;124&quot;)]</tw-passagedata><tw-passagedata pid="31" name="向右走" tags="" position="1400,100" size="100,100">你決定冒險向右走去，
+穿過層層濕冷的霧氣，一座高聳的建築物輪廓在迷霧中現形，
+你決定去那邊看有沒有管理員的身影。
+
+「這裡是......！」
+
+走近後，你認出這棟大樓是你很少來的綜合院館，
+身上被霧氣浸得又濕又冷的你想進入室內避寒。
+
+[[進入綜院]]
+
+  
+</tw-passagedata><tw-passagedata pid="32" name="向左走" tags="" position="1200,0" size="100,100">你還是想不起你為什麼在這。
+
+你決定往操場的方向找看看有沒有線索。
+
+在濃重的迷霧中，你隱約看到三岔路
+
+(link:&quot;向前走&quot;)[(go-to:&quot;124&quot;)]
+
+[[向右走]]
+
+(link:&quot;向左走&quot;)[(go-to:&quot;124&quot;)]</tw-passagedata><tw-passagedata pid="33" name="進入綜院" tags="" position="1500,100" size="100,100">你踏進大門，一股力量推著你到了電梯門前，
+走進電梯，你還沒來得及按下任何樓層，7樓按鈕突地亮起。
+冷光映在你臉上，電梯內悄無聲息。
+
+
+&#39;&#39;&lt;span style=&quot;font-size:2em;&quot;&gt;匡噹——
+
+(align:&quot;=&gt;&lt;=&quot;)+(box:&quot;X&quot;)[[7樓到了]]
+
+&lt;/span&gt; &#39;&#39;
+
+
+
+</tw-passagedata><tw-passagedata pid="34" name="「大家......?」" tags="" position="1700,100" size="100,100">你一個人走在一片無光，夜半的綜院大樓內，
+各種關於綜院的奇怪傳聞，不禁一則則浮上了你的心頭。
+你開始懷疑剛剛見到的一切都是假的。
+
+在既黑暗又悄然無聲的氣氛下
+你不由得冒起了冷汗.......
+而且，怎麼會走了這麼久，都還沒找到出口呢？
+
+[[「到底在哪？」]]
+</tw-passagedata><tw-passagedata pid="35" name="7樓到了" tags="" position="1600,100" size="100,100">在昏暗的走廊中，你走進一間大教室，發現裡面是熱情的老師在與學生討論遊戲的設計
+你興致高昂的加入討論，暫時忘卻了外界的寒冷與不安。
+「......」
+「......」
+「......」
+
+
+
+
+
+
+當討論結束，你發現窗外一片漆黑。
+轉過頭，赫然發現周遭的老師、同學都不見了。
+
+[[「大家......?」]]</tw-passagedata><tw-passagedata pid="36" name="「到底在哪？」" tags="" position="1800,100" size="100,100">不知走了多久，正當你開始因為找不到出口而害怕之時，
+
+
+
+&#39;&#39;&lt;span style=&quot;font-size:2em;&quot;&gt;啪嗒！&lt;/span&gt; &#39;&#39;
+
+
+背後有人拍了拍你的肩膀，你嚇得猛一回頭…...
+
+(link:&quot;「是誰!?」&quot;)[
+
+噢，原來是提著手電筒的管理員伯伯。
+
+頭髮灰白的老者親切且嘮叨地詢問你，有些破舊的制服，你看不清上面的姓名。
+
+「同學，你怎麼還在這裡？」
+
+管理員伯伯低頭看了下手錶，語氣突然嚴肅了起來。
+
+「孩子，你該走了，你要//搭電梯//嗎？或者//走樓梯//？」
+
+
+[[搭電梯]]
+
+[[走樓梯]]
+
+]
+</tw-passagedata><tw-passagedata pid="37" name="搭電梯" tags="" position="1800,200" size="100,100">管理員帶你到電梯口，要你早點回家，
+電梯門緩緩關上的那一刻，管理員伯伯臉上的笑容似乎變得難以捉摸。
+
+電梯開始下降，但隨即燈光閃爍，發出令人不安的聲響。
+
+
+(align:&quot;=&gt;&lt;=&quot;)+(box:&quot;X&quot;)[&lt;span class=&quot;shake shadow&quot; style=&quot;color:red; font-size:4em;&quot;&gt;轟——&lt;/span&gt;]
+
+
+下一秒，電梯猛地一震，突然往下急速墜落！
+
+[[「啊────！」]]</tw-passagedata><tw-passagedata pid="38" name="走樓梯" tags="" position="1900,200" size="100,100">管理員帶你到樓梯口，要你早點回家，不要再獨自逗留到這種深夜了。
+
+管理員將手中的手電筒交給你。
+
+「這會//有用//的。」
+
+你也以最快的速度，帶著謝意奔出了綜院的大門。
+
+[[「謝謝您。」]]
+
+</tw-passagedata><tw-passagedata pid="39" name="「啊────！」" tags="" position="1800,300" size="100,100">耳邊傳來金屬摩擦的尖銳聲，像是整個機械都在哀號。
+你全身發冷，指尖冰涼，五臟六腑衝撞著。
+
+電梯猛地一震後，你的身體像被抽離重力，
+你以一種不正常的姿勢躺在地板上。
+
+冷霧在綜院的深處緩緩蔓延，潮濕的氣息將你緊緊包裹。
+整個意識陷入一片漆黑。
+
+(link:&quot;......&quot;)[(go-to:&quot;新的管理員&quot;)]</tw-passagedata><tw-passagedata pid="40" name="新的管理員" tags="" position="1800,400" size="100,100">當你再次睜開眼時，
+還是熟悉的綜合院館夜間景象，
+空蕩、濕冷，空氣中帶著霉味與冰冷的金屬味。
+
+你感覺到手中握著一把鑰匙，手腕被冰冷的鎖鏈輕輕纏住。
+鏡子裡映出的自己，臉龐變得陌生而模糊，彷彿帶著無法捉摸的笑容。
+
+[[「……我……是……」]]</tw-passagedata><tw-passagedata pid="41" name="「……我……是……」" tags="" position="1800,500" size="100,100">(align:&quot;=&gt;&lt;=&quot;)+(box:&quot;X&quot;)[
+&lt;span style=&quot;font-size:3em;&quot;&gt;
+我是//新的夜間管理員//！你們&lt;span class=&quot;shake shadow mirror&quot; style=&quot;color:red;&quot;&gt;好&lt;/span&gt;嗎！
+&lt;/span&gt;
+]</tw-passagedata><tw-passagedata pid="42" name="「謝謝您。」" tags="" position="1900,300" size="100,100">你握緊手中的手電筒，光束在濕冷的夜色中划過。
+腳下的水聲和霧氣環繞著你，但沒有任何阻礙，你順利避開陰影與陷阱。
+
+粉色月光映在濕潤的地面上，映出你的影子——清晰而真實。
+你從體育館後方沿著水岸小心前行，心跳逐漸平復。
+
+終於，你成功離開了這座冰冷、濕濕的學校，
+夜色中只剩下手電筒微弱的光，照亮你的歸途。
+
+(link:&quot;......&quot;)[(go-to:&quot;123&quot;)]</tw-passagedata><tw-passagedata pid="43" name="123" tags="" position="1900,400" size="100,100">隔天，你買了水果，準備好好答謝昨天晚上「指引你一條生路」的管理員伯伯。
+
+到了綜院二樓的管理室，你想向值班的管理員問清楚，昨晚是誰當班時，
+管理員詫異地說：
+「咦？昨晚值班的管理員身體不適，應該十點就回家了呀？」
+
+那…...凌晨帶你離開綜院的，又是誰呢？
+</tw-passagedata><tw-passagedata pid="44" name="124" tags="" position="1600,0" size="100,100">你還是想不起你為什麼在這。
+
+你決定往操場的方向找看看有沒有線索。
+
+在濃重的迷霧中，你隱約看到三岔路
+
+(link:&quot;向前走&quot;)[(go-to:&quot;125&quot;)]
+
+[[向右走]]
+
+(link:&quot;向左走&quot;)[(go-to:&quot;125&quot;)]
+</tw-passagedata><tw-passagedata pid="45" name="126" tags="" position="1800,0" size="100,100">(text-rotate-x:359)+(text-rotate-z:15)[
+&lt;span style=&quot;color:red; font-size:3em;&quot;&gt;
+&#39;&#39;我說過了吧
+
+這裡不能走&#39;&#39;
+&lt;/span&gt;
+]
+</tw-passagedata><tw-passagedata pid="46" name="125" tags="" position="1700,0" size="100,100">你還是想不起你為什麼在這。
+
+你決定往操場的方向找看看有沒有線索。
+
+在濃重的迷霧中，你隱約看到三岔路
+
+(link:&quot;向前走&quot;)[(go-to:&quot;126&quot;)]
+
+[[向右走]]
+
+(link:&quot;向左走&quot;)[(go-to:&quot;126&quot;)]</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim
