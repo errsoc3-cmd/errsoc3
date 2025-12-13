@@ -54,11 +54,31 @@
   display: inline-block;
   transform: scaleY(-1);
 }
+
+.marquee-container {
+  width: 100%; /* 佔滿整個螢幕寬度 */
+  overflow: hidden; /* 隱藏超出範圍的文字 */
+}
+
+.marquee {
+  display: inline-block;
+  white-space: nowrap; /* 文字不換行 */
+  animation: marquee 15s linear infinite; /* 跑馬燈速度 */
+}
+
+@keyframes marquee {
+  0% { transform: translateX(70%); }   /* 從右側進入 */
+  100% { transform: translateX(-100%); } /* 從左側離開 */
+}
 </style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="首頁" tags="" position="150,150" size="100,100">
+
+&lt;div class=&quot;marquee-container&quot;&gt;
+  (text-colour:red)[&lt;span class=&quot;marquee&quot; style=&quot;font-size:2em; font-style:italic;&quot;&gt;歡迎離開政治大學！歡迎離開政治大學！歡迎開離政治大學！&lt;/span&gt;]
+&lt;/div&gt;
 
 su3cl3ji3ap7g42u4g6u yk3
 最佳體驗
-遊玩方法：點擊藍色的字
+遊玩方法：點擊藍色的字，左上有返回鍵
 
 (align:&quot;=&gt;&lt;=&quot;)+(box:&quot;X&quot;)[[開始遊戲]] 
 
@@ -245,18 +265,13 @@ su3cl3ji3ap7g42u4g6u yk3
 
 (text-colour:grey)[(align:&quot;=&gt;&lt;=&quot;)+(box:&quot;X&quot;)[太遲了太遲了太遲了太遲了太遲了太遲了太遲了太遲了太遲了太遲了太遲了太遲了太遲了太遲了太遲了太遲了太遲了太遲了太遲了太遲了太遲了太遲了]](align:&quot;=&gt;&lt;=&quot;)+(box:&quot;X&quot;)[&lt;span class=&quot;mirror&quot;&gt;(text-colour:red)[&lt;h1&gt;太遲了
 (text-colour:red)[你來不及離開了]&lt;/h1&gt;]&lt;/span&gt;](text-colour:grey)[(align:&quot;=&gt;&lt;=&quot;)+(box:&quot;X&quot;)[太遲了太遲了太遲了太遲了太遲了太遲了太遲了太遲了太遲了太遲了太遲了太遲了太遲了太遲了太遲了太遲了太遲了太遲了太遲了太遲了太遲了太遲了]]
-</tw-passagedata><tw-passagedata pid="12" name="Untitled Passage" tags="" position="150,25" size="100,100">不知道從哪裡開始，四周漫出一層薄白的霧，像是有什麼看不見的手正把迷霧從推到你身旁。
-霧的另一端看不見任何人。</tw-passagedata><tw-passagedata pid="13" name="「我知道為什麼我在這裡。」" tags="" position="350,25" size="100,100">
-
-</tw-passagedata><tw-passagedata pid="14" name="「我ㄓ道為什麼我ㄗㄞ這裡。」" tags="" position="250,25" size="100,100">
-
-(align:&quot;=&gt;&lt;=&quot;)+(box:&quot;X&quot;)[(text-colour:red)[&lt;h1&gt;你　早　就　知　道　了　&lt;/h1&gt;]]</tw-passagedata><tw-passagedata pid="15" name="(直接衝過去)" tags="" position="650,275" size="100,100">你違反了資格......
+</tw-passagedata><tw-passagedata pid="12" name="(直接衝過去)" tags="" position="650,275" size="100,100">你違反了資格......
 
 
 (align:&quot;=&gt;&lt;=&quot;)+(box:&quot;X&quot;)[(text-colour:red)[&lt;h1&gt;[你 已 死 亡]&lt;h1&gt;]]
 
 
-</tw-passagedata><tw-passagedata pid="16" name="Page5" tags="" position="900,150" size="100,100">你仔細回想剛才的情況，
+</tw-passagedata><tw-passagedata pid="13" name="Page5" tags="" position="900,150" size="100,100">你仔細回想剛才的情況，
 警衛好像只在某個特定範圍內出現，
 而一旦你踏出那個範圍，他就會消失。
 
@@ -272,7 +287,7 @@ su3cl3ji3ap7g42u4g6u yk3
 ]
 |lis&gt;[查看學生證]
 
-</tw-passagedata><tw-passagedata pid="17" name="(留在原地)" tags="" position="1025,25" size="100,100"></tw-passagedata><tw-passagedata pid="18" name="(前往 中正圖書館)" tags="" position="900,275" size="100,100">你想起來了。
+</tw-passagedata><tw-passagedata pid="14" name="(留在原地)" tags="" position="1025,25" size="100,100"></tw-passagedata><tw-passagedata pid="15" name="(前往 中正圖書館)" tags="" position="900,275" size="100,100">你想起來了。
 
 現在是期末考週前的夜晚，為了避開圖書館內的人擠人，你選擇躲進中正圖書館旁的「狗洞」唸書。
 
@@ -283,7 +298,7 @@ su3cl3ji3ap7g42u4g6u yk3
 再度睜眼你就在噴水池裡面了。
 
 (link: &quot;「先去狗洞看一眼吧。」&quot;)[(go-to: &quot;111&quot;)]
-</tw-passagedata><tw-passagedata pid="19" name="(前往 校內公車站)" tags="" position="1200,350" size="100,100"></tw-passagedata><tw-passagedata pid="20" name="(前往 行政大樓)" tags="" position="1200,200" size="100,100"></tw-passagedata><tw-passagedata pid="21" name="(前往 操場)" tags="" position="1200,50" size="100,100"></tw-passagedata><tw-passagedata pid="22" name="111" tags="" position="900,375" size="100,100">四周安靜得可怕。
+</tw-passagedata><tw-passagedata pid="16" name="(前往 校內公車站)" tags="" position="1200,350" size="100,100"></tw-passagedata><tw-passagedata pid="17" name="(前往 行政大樓)" tags="" position="1200,200" size="100,100"></tw-passagedata><tw-passagedata pid="18" name="(前往 操場)" tags="" position="1200,50" size="100,100"></tw-passagedata><tw-passagedata pid="19" name="111" tags="" position="900,375" size="100,100">四周安靜得可怕。
 
 平日這條連通往圖書館正門的階梯通道總會有風聲、蟲鳴聲，或是遠處指南路上的車聲，但現在——什麼都沒有。
 
@@ -301,7 +316,7 @@ su3cl3ji3ap7g42u4g6u yk3
 拿到了背包的你，站起身準備離開，轉頭看向出口，卻愣住了。
 
 (link:&quot;「靠......不是。」&quot;)[(go-to: &quot;112&quot;)]
-</tw-passagedata><tw-passagedata pid="23" name="112" tags="" position="900,475" size="100,100">原本應該是通往圖書館廣場的階梯缺口，此刻被一面粗糙的水泥牆完全封死。
+</tw-passagedata><tw-passagedata pid="20" name="112" tags="" position="900,475" size="100,100">原本應該是通往圖書館廣場的階梯缺口，此刻被一面粗糙的水泥牆完全封死。
 
 你轉向另一頭，發現另一側的出口也變成了同樣的水泥牆。
 
@@ -312,7 +327,7 @@ su3cl3ji3ap7g42u4g6u yk3
 
 [[嘗試撞擊牆壁]]
 
-(link:&quot;向//旁邊的人//求救&quot;)[(go-to: &quot;向旁邊的人求救&quot;)]</tw-passagedata><tw-passagedata pid="24" name="嘗試撞擊牆壁" tags="" position="1025,500" size="100,100">你咬牙，用身體撞向牆壁。
+(link:&quot;向//旁邊的人//求救&quot;)[(go-to: &quot;向旁邊的人求救&quot;)]</tw-passagedata><tw-passagedata pid="21" name="嘗試撞擊牆壁" tags="" position="1025,500" size="100,100">你咬牙，用身體撞向牆壁。
 
 牆紋絲不動......
 
@@ -329,7 +344,7 @@ su3cl3ji3ap7g42u4g6u yk3
 牆就收縮起來，
 把你一點一點吃了進去。
 
-(link:&quot;「等、等等！？」&quot;)[(go-to:&quot;112-3&quot;)]</tw-passagedata><tw-passagedata pid="25" name="觀察四周" tags="" position="775,500" size="100,100">就在這時，牆上的掛鐘開始(text-colour:red)[逆時針轉動]，發出刺耳的滴答聲。
+(link:&quot;「等、等等！？」&quot;)[(go-to:&quot;112-3&quot;)]</tw-passagedata><tw-passagedata pid="22" name="觀察四周" tags="" position="775,500" size="100,100">就在這時，牆上的掛鐘開始(text-colour:red)[逆時針轉動]，發出刺耳的滴答聲。
 
 (align:&quot;==&gt;&quot;)[//&#39;&#39;－ 滴答滴答滴答滴答滴答滴答&#39;&#39;//]
 
@@ -350,7 +365,7 @@ su3cl3ji3ap7g42u4g6u yk3
     
   (link:&quot;「？！」&quot;)[(go-to:&quot;112-1&quot;)]
   ]
-</tw-passagedata><tw-passagedata pid="26" name="向旁邊的人求救" tags="" position="900,575" size="100,100">你下意識向身旁的人求救。
+</tw-passagedata><tw-passagedata pid="23" name="向旁邊的人求救" tags="" position="900,575" size="100,100">你下意識向身旁的人求救。
 
 話還沒出口，你就愣住了。
 
@@ -366,14 +381,14 @@ su3cl3ji3ap7g42u4g6u yk3
 「(text-colour:red)[他]」笑了。
 
 (link: &quot;「你在(text-colour:red)[&lt;span class=&#39;vertical-flip&#39;&gt;看我嗎&lt;/span&gt;]？」&quot;)[(go-to: &quot;112-5&quot;)]
-</tw-passagedata><tw-passagedata pid="27" name="112-1" tags="" position="675,500" size="100,100">你朝著無止盡的黑暗掉落。
+</tw-passagedata><tw-passagedata pid="24" name="112-1" tags="" position="675,500" size="100,100">你朝著無止盡的黑暗掉落。
 
 ......
 ......
 ......
 ......
 ......
-(link:&quot;......&quot;)[(go-to:&quot;112-2&quot;)]</tw-passagedata><tw-passagedata pid="28" name="112-2" tags="" position="575,500" size="100,100">今天的晚風涼得有些反常。
+(link:&quot;......&quot;)[(go-to:&quot;112-2&quot;)]</tw-passagedata><tw-passagedata pid="25" name="112-2" tags="" position="575,500" size="100,100">今天的晚風涼得有些反常。
 你坐在狗洞裡，翻著即將到來的期末考內容，卻怎麼也讀不進去。
 
 「對了，期末考是什麼時候啊？」
@@ -394,14 +409,14 @@ su3cl3ji3ap7g42u4g6u yk3
 
 
 
-</tw-passagedata><tw-passagedata pid="29" name="112-3" tags="" position="1125,500" size="100,100">你被無止盡的黑暗吞噬。
+</tw-passagedata><tw-passagedata pid="26" name="112-3" tags="" position="1125,500" size="100,100">你被無止盡的黑暗吞噬。
 
 ......
 ......
 ......
 ......
 ......
-(link:&quot;......&quot;)[(go-to:&quot;112-4&quot;)]</tw-passagedata><tw-passagedata pid="30" name="112-4" tags="" position="1225,500" size="100,100">今天的晚風涼得有些反常。
+(link:&quot;......&quot;)[(go-to:&quot;112-4&quot;)]</tw-passagedata><tw-passagedata pid="27" name="112-4" tags="" position="1225,500" size="100,100">今天的晚風涼得有些反常。
 你坐在狗洞裡，翻著即將到來的期末考內容，卻怎麼也讀不進去。
 
 「對了，期末考是什麼時候啊？」
@@ -414,14 +429,14 @@ su3cl3ji3ap7g42u4g6u yk3
 
 
 
-外頭的(text-colour:red)[紅色月亮]高懸著。</tw-passagedata><tw-passagedata pid="31" name="112-5" tags="" position="900,675" size="100,100">你的視野一片黑暗。
+外頭的(text-colour:red)[紅色月亮]高懸著。</tw-passagedata><tw-passagedata pid="28" name="112-5" tags="" position="900,675" size="100,100">你的視野一片黑暗。
 
 ......
 ......
 ......
 ......
 ......
-(link:&quot;......&quot;)[(go-to:&quot;112-6&quot;)]</tw-passagedata><tw-passagedata pid="32" name="112-6" tags="" position="900,775" size="100,100">今天的晚風涼得有些反常。
+(link:&quot;......&quot;)[(go-to:&quot;112-6&quot;)]</tw-passagedata><tw-passagedata pid="29" name="112-6" tags="" position="900,775" size="100,100">今天的晚風涼得有些反常。
 你坐在狗洞裡，翻著即將到來的期末考內容，卻怎麼也讀不進去。
 
 &lt;span class=&quot;vertical-flip&quot;&gt;「//對了，期末考是什麼時候啊？//」&lt;/span&gt;
