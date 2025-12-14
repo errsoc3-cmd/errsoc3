@@ -67,7 +67,110 @@
   10% { transform: translateX(0); }   /* 前 5% 迅速進入畫面 */
   100% { transform: translateX(-100%); }
 }
-</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="首頁" tags="" position="150,150" size="100,100">
+
+.marquee-normal {
+  color: red;
+  white-space: nowrap;
+  overflow: hidden;
+  display: block;
+}
+
+.marquee-normal span {
+  display: inline-block;
+  padding-left: 100%;
+  animation: marquee-normal-move 10s linear infinite;
+}
+
+@keyframes marquee-normal-move {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+.marquee-reverse {
+  color: red;
+  white-space: nowrap;
+  overflow: hidden;
+  display: block;
+}
+
+.marquee-reverse span {
+  display: inline-block;
+  padding-left: 100%;
+  animation: marquee-reverse-chaos 16s linear infinite;
+}
+
+@keyframes marquee-reverse-chaos {
+  0%   { transform: translateX(0); }
+  35%  { transform: translateX(-100%); }
+
+  /* 二路開始倒退 */
+  50%  { transform: translateX(-60%); }
+
+  /* 繼續往左，像是什麼都沒發生 */
+  75%  { transform: translateX(-120%); }
+
+  100% { transform: translateX(0); }
+}
+
+/* 樓層文字跳動效果 */
+@keyframes jump {
+  0%   { transform: translateY(0); opacity:1; }
+  25%  { transform: translateY(-5px); opacity:0.8; }
+  50%  { transform: translateY(5px); opacity:0.5; }
+  75%  { transform: translateY(-5px); opacity:0.8; }
+  100% { transform: translateY(0); opacity:1; }
+}
+
+#red-questions {
+  color: red;
+  font-size: 4em;           
+  width: 100%;
+  height: 100vh;            
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.crazy-q {
+  margin: 0.05em;
+  display: inline-block;
+  animation: blink 1.2s infinite alternate,
+             shake 0.5s infinite;
+}
+
+/* 閃爍效果 */
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0.3; }
+  100% { opacity: 1; }
+}
+
+/* 抖動效果 */
+@keyframes shake {
+  0%   { transform: translate(0, 0); }
+  25%  { transform: translate(-2px, 2px); }
+  50%  { transform: translate(2px, -2px); }
+  75%  { transform: translate(-2px, 2px); }
+  100% { transform: translate(0, 0); }
+}
+
+.error404 {
+  color: red;
+  font-size: 6em;          /* 放大字體 */
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+  margin-top: 20%;
+  animation: blink 1s infinite alternate;  /* 閃爍 */
+}
+
+@keyframes blink {
+  0%   { opacity: 1; }
+  50%  { opacity: 0.3; }
+  100% { opacity: 1; }
+}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="首頁" tags="" position="150,150" size="100,100">
 
 &lt;div class=&quot;marquee-container&quot;&gt;
   (text-colour:red)[&lt;span class=&quot;marquee&quot; style=&quot;font-size:2em; font-style:italic;&quot;&gt;歡迎離開政治大學！歡迎離開政治大學！歡迎開離政治大學！&lt;/span&gt;]
@@ -275,7 +378,8 @@ su3cl3ji3ap7g42u4g6u yk3
 你摸摸口袋，發現裡面不知何時多了一張濕掉的學生證，
 背面出現一句忽隱忽現的文字：
 (click-replace: ?lis)[(align:&quot;=&gt;&lt;=&quot;)+(box:&quot;X&quot;)[  (text-colour:red)[
-            &lt;span class=&quot;blink&quot;&gt;「如果不想死，就趕緊逃跑吧。
+            &lt;span class=&quot;blink&quot;&gt;「如果不想死，
+            就趕緊逃跑吧。
             情況開始失控了，月亮變得很紅，已經沒時間了。」&lt;/span&gt;]
         ]
     
@@ -295,7 +399,16 @@ su3cl3ji3ap7g42u4g6u yk3
 再度睜眼你就在噴水池裡面了。
 
 (link: &quot;「先去狗洞看一眼吧。」&quot;)[(go-to: &quot;111&quot;)]
-</tw-passagedata><tw-passagedata pid="16" name="(前往 校內公車站)" tags="" position="1200,300" size="100,100"></tw-passagedata><tw-passagedata pid="17" name="(前往 行政大樓)" tags="" position="900,25" size="100,100"></tw-passagedata><tw-passagedata pid="18" name="(前往 操場)" tags="" position="1200,100" size="100,100">你還是想不起你為什麼在這。
+</tw-passagedata><tw-passagedata pid="16" name="(前往 校內公車站)" tags="" position="1200,300" size="100,100">你想起來了。
+
+現在是期末考週前的夜晚，你在底圖讀完期中考進度後，拖著疲憊的身體往山上宿舍走。
+
+但你實在太累了，走著走著不知不覺就失去意識了。
+
+再度睜眼你就在噴水池裡面了。
+
+(link: &quot;「是的，我該回宿舍了。」&quot;)[(go-to: &quot;131&quot;)]
+</tw-passagedata><tw-passagedata pid="17" name="(前往 行政大樓)" tags="" position="900,25" size="100,100"></tw-passagedata><tw-passagedata pid="18" name="(前往 操場)" tags="" position="1200,100" size="100,100">你還是想不起你為什麼在這。
 
 你決定往操場的方向找看看有沒有線索。
 
@@ -647,7 +760,271 @@ su3cl3ji3ap7g42u4g6u yk3
 
 [[向右走]]
 
-(link:&quot;向左走&quot;)[(go-to:&quot;126&quot;)]</tw-passagedata></tw-storydata>
+(link:&quot;向左走&quot;)[(go-to:&quot;126&quot;)]</tw-passagedata><tw-passagedata pid="47" name="131" tags="" position="1300,300" size="100,100">你走到行政大樓旁的公車等候區。
+
+LED 面板不停閃爍，字元像是壞掉般扭曲跳動，
+亂碼一行行滾過，發出細碎的電流聲。
+
+接著，熟悉的站名出現了——
+
+&lt;span class=&quot;marquee-normal&quot;&gt;
+  &lt;span&gt;政大一路　即將進站　&lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;marquee-reverse&quot;&gt;
+  &lt;span&gt;政大二路　即將進站　&lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;marquee-normal&quot;&gt;
+  &lt;span&gt;政大三路　即將進站　&lt;/span&gt;
+&lt;/span&gt;
+
+
+
+你轉頭，看向停在一旁的校車。
+
+車門緊閉，車內燈光昏暗，
+駕駛座上的「司機」一動也不動。
+
+
+你選擇，
+
+[[搭乘 9990909政大一路]]
+
+[[搭乘 999???? 政大二路]]
+
+[[搭乘 9990908政大三路]]
+
+[[走回山上]]
+
+</tw-passagedata><tw-passagedata pid="48" name="搭乘 9990909政大一路" tags="" position="1400,300" size="100,100">翻轉口袋，指尖碰到冰冷的金屬。
+
+兩枚銅板，不多不少，靜靜躺在掌心。
+
+你將它們投入投幣箱。
+
+清脆的聲響在車廂裡迴盪了一下，隨即消失。
+
+司機沒有回頭，只是微微點了點頭，
+像是在確認什麼，又像是在允許你留下。
+
+(link:&quot;「......。」&quot;)[(go-to:&quot;132&quot;))]</tw-passagedata><tw-passagedata pid="49" name="搭乘 999???? 政大二路" tags="" position="1400,400" size="100,100">&lt;div class=&quot;error404&quot;&gt;404 ERROR&lt;/div&gt;(text-colour:grey)[//４０0404error0040404４４０４０4040４ee０４４０404erroe０04０４０４eeeeoorii４０４40０４４０４4error040００４００4oorre04004４００４0404０４４００００４０error４０４404４４０４０４４rrrrrr0404044０４４0０４０４４40404４error０４０//]
+
+(link:&quot;......&quot;)[(go-to:&quot;133&quot;)]</tw-passagedata><tw-passagedata pid="50" name="搭乘 9990908政大三路" tags="" position="1400,500" size="100,100">你一上車，校車就突然加速！
+
+你還來不及抓穩，身體被猛地甩向座位邊緣。
+
+車子轉彎時毫不減速，
+窗外的建築被拉成扭曲的影子。
+
+在下一次劇烈晃動前，你撲向前方，
+用力按下了下車鈴。
+
+&lt;span style=&quot;color: red; 
+             font-size: 3em; 
+             font-style: italic;&quot;&gt;
+  「叮——」
+&lt;/span&gt;
+
+
+聲音在車廂裡顯得過於清楚。
+
+校車猛地煞停。
+
+你整個人向前撲去，
+胸口撞上座椅靠背，呼吸亂成一團。
+
+後門，打開了。
+
+[[走回山上]]</tw-passagedata><tw-passagedata pid="51" name="走回山上" tags="" position="1400,600" size="100,100">經過國際大樓時，整棟樓靜得像凌晨三點。
+
+你按下電梯，門立刻「叮」一聲打開，裡面亮亮的，看起來普通得不能再普通。
+
+直到你踏進電梯，音樂才慢慢響起。
+
+不是你熟悉的那種輕音樂，而是一段奇怪的旋律——像是舊遊樂園的音樂被人放慢兩倍，音符黏在一起，聽久了讓人起雞皮疙瘩。
+
+你按下樓層鍵，心裡默默祈禱它不要故障。
+
+[[「千萬不要故障啊！」]]</tw-passagedata><tw-passagedata pid="52" name="132" tags="" position="1500,300" size="100,100">車門闔上，校車緩緩駛動。
+窗外的紅色月光被一盞盞路燈切碎，逐漸退遠。
+
+你不知道車子開了多久。
+
+直到車速放慢，
+司機在後門前停下。
+
+門開的那一刻，冷風灌入。
+
+「//走吧，千萬不要回頭。//」他說。
+
+[[你沒有回頭。]]
+
+[[你回頭了。]]
+
+</tw-passagedata><tw-passagedata pid="53" name="你沒有回頭。" tags="" position="1600,200" size="100,100">你沒有回頭。
+
+腳步落在地面時，你清楚地感覺到重量，
+不是被拖走，也不是被吞沒。
+
+身後，車門闔上。
+
+引擎聲遠去，逐漸融進夜色。
+
+你站在校園之外，
+紅色的月亮被建築遮住，只剩下一小角。
+
+你深吸一口氣。
+
+你成功離開了學校。</tw-passagedata><tw-passagedata pid="54" name="你回頭了。" tags="" position="1600,300" size="100,100">你猶豫了一下。
+
+在踏出後門之前，你還是回了頭。
+
+司機不知何時已經轉過身來。
+
+他的臉被後照鏡切成不自然的角度，
+嘴角維持著那個過於準確的微笑。
+
+&lt;span style=&quot;display:inline-block; transform: rotate(180deg);&quot;&gt;
+  [[「還沒到站呢。」]]
+&lt;/span&gt;
+
+</tw-passagedata><tw-passagedata pid="55" name="「千萬不要故障啊！」" tags="" position="1500,600" size="100,100">電梯準備往上時突然停住，門開了一半，但外面一片漆黑。
+
+你伸頭往外看，什麼都沒有。
+
+就在你準備按「關門」時，音樂忽然跳到下一段旋律，節奏變快了，好像有人在另一個空間按了「下一首」。
+
+你心跳加速，連忙按關門鍵，門終於閉上。
+
+到了5樓時，你衝出電梯，回頭一看，音樂卻突然停了，像是有人在機械室裡盯著你按下了「暫停」。
+
+你心裡毛毛的。
+
+[[「應該只是電梯太老舊了吧......」]]
+
+</tw-passagedata><tw-passagedata pid="56" name="「應該只是電梯太老舊了吧......」" tags="" position="1500,700" size="100,100">你回到宿舍，宿舍靜悄悄的。
+
+[[你不安穩的睡了一個覺。]]</tw-passagedata><tw-passagedata pid="57" name="你不安穩的睡了一個覺。" tags="" position="1500,800" size="100,100">隔天，你是被你朋友吵醒的。
+
+明明昨天大家都不在的。
+
+朋友用奇怪的眼神盯著你，他笑得有些僵硬。
+
+「你知道嗎？山上蔣公銅像的馬會換腳。你半夜去投一個硬幣，牠還會載你下山。」
+
+你苦笑，覺得他在嚇你。
+
+[[「怎麼可能！」]]</tw-passagedata><tw-passagedata pid="58" name="「怎麼可能！」" tags="" position="1500,900" size="100,100">但那天晚上，你經過山腳下時，看到銅像的影子落在地上——馬的前蹄似乎真的跟白天不太一樣位置。
+
+你猶豫了三秒，摸了摸口袋，剛好有一枚硬幣。
+
+(link:&quot;(投入硬幣)&quot;)[
+
+你彎下腰，把硬幣放在銅像底座前。金屬碰到石頭的聲音清脆得有點刺耳。就在那瞬間，你感覺地面微微震了一下。
+
+接著，你看見馬的影子——動了。
+
+牠抬起另一隻前腳，像是要踏出去。
+
+你嚥了一口口水，開始[[往宿舍方向走]]。]
+</tw-passagedata><tw-passagedata pid="59" name="往宿舍方向走" tags="" position="1500,1000" size="100,100">奇怪的是，你的腳步突然變得輕盈，像有什麼力量在托著你往下走。
+
+彷彿真的有人，或者某匹馬，正陪你一起走下山。
+
+你來到國際大樓前，電梯門自動打開，裡面又響起那段奇怪的音樂。
+
+[[你踏了進去。]]</tw-passagedata><tw-passagedata pid="60" name="你踏了進去。" tags="" position="1500,1100" size="100,100">你撇見你朋友似乎也要搭乘這班電梯。
+
+[[等他]]
+
+[[不等他]]</tw-passagedata><tw-passagedata pid="61" name="等他" tags="" position="1400,1200" size="100,100">你等你的朋友踏進電梯後，才按關門。
+
+音樂突然變大聲，快得像在催促什麼。
+
+(link:&quot;「怎麼回事？」&quot;)[「怎麼回事？」
+
+你轉頭想問你的朋友，
+剛剛還站在身旁的位置空無一物，
+連影子都沒有留下。
+&lt;div id=&quot;floor-display&quot; style=&quot;font-size:4em; font-weight:bold; color:red; display:inline-block; animation:jump 0.3s infinite;&quot;&gt;
+(live:0.2s)[
+  (either: &quot;3&quot;,&quot;5&quot;,&quot;2&quot;,&quot;7&quot;,&quot;1&quot;,&quot;9&quot;,&quot;4&quot;)
+]
+&lt;/div&gt;
+
+
+樓層顯示器開始亂跳：3、5、2……沒有一個是你按的。
+
+你慌了，按「開門」鍵，可是電梯不動。
+
+音樂變得越來越吵，旋律完全亂掉，像是有人在玩壞掉的電子琴。
+
+電梯開始急速往上衝，你被震得站不穩。
+
+突然之間，[[電梯猛然停下]]。]
+</tw-passagedata><tw-passagedata pid="62" name="不等他" tags="" position="1500,1200" size="100,100">你按了樓層鍵，心裡其實很害怕，但音樂忽然變得柔和起來，不再像昨晚那樣詭異。
+
+電梯一路平穩上升，你甚至覺得有種溫暖的感覺，好像有人在保護你。
+
+門打開時，你看到走廊燈光明亮，空氣安靜沉穩。
+
+你走出電梯前，回頭一看，音樂又突然停止了。
+
+像是一種禮貌的道別。
+
+你知道今晚山上那匹馬確實陪你下山了，但牠沒有惡意，只是在履行某種古老又奇妙的傳說。
+
+[[「真的存在啊。」]]</tw-passagedata><tw-passagedata pid="63" name="電梯猛然停下" tags="" position="1400,1300" size="100,100">門只開出一條縫，你看到外面不是宿舍樓層——而是黑暗的山壁。
+
+你還沒來得及叫出聲，就聽到那熟悉的金屬摩擦聲——銅像的馬蹄聲。
+
+下一秒，電梯後方傳來低沉的氣息，冰冷、靠近。
+
+音樂停了。
+
+[[你再也沒走出電梯。]]
+
+</tw-passagedata><tw-passagedata pid="64" name="你再也沒走出電梯。" tags="" position="1400,1400" size="100,100">第二天早上，學校只是公告電梯「臨時故障」，
+
+而山上的銅像馬蹄痕跡，比昨天多出了一條新鮮的。</tw-passagedata><tw-passagedata pid="65" name="133" tags="" position="1500,400" size="100,100">車門關上的一瞬間，車子沒有發動，只是慢慢地滑行，聲音像是從很遠的深淵傳來。
+窗外的景象不對——街道扭曲延伸，建築高得不自然，天空呈現血紅。
+
+你想喊司機，但喉嚨像被冰封，只有乾澀的氣息能冒出。
+
+每一個車站名都像是不存在的符號：??、░▒▓、???…
+
+你感到自己正在被拉進某個錯誤的世界，每一秒都像永遠。
+
+[[░▒▓、░▒]]</tw-passagedata><tw-passagedata pid="66" name="░▒▓、░▒" tags="" position="1600,400" size="100,100">//(align:&quot;=&gt;&lt;=&quot;)+(box:&quot;X&quot;)[░▒▓░░，▒▓░！
+
+░▒░▒▓░▒░▒？
+▓░！
+
+......▓▓？
+░▒░▓▓▒░▒░▒░▓▒░▒░▒▓░▒，
+░▒▓░▓▒░▒，
+░▒░▒▓░▒░▒▓。
+▓░▓▓░！
+
+
+
+
+[&lt;span style=&quot;color: red; font-size: 3em;&quot;&gt;☾☾☾☾☾☾☾☾☾☾☾☾☾☾&lt;/span&gt;]
+
+]//
+
+
+</tw-passagedata><tw-passagedata pid="67" name="「還沒到站呢。」" tags="" position="1700,300" size="100,100">你這才發現
+車門，不在你身後。
+
+校車重新啟動。
+
+(text-colour:red)[紅色月光]從窗外灌進來，
+照亮座位上一個又一個空位。
+
+每個空位上，
+都坐著一個「曾經回頭的人」。
+
+車子沒有再停過。</tw-passagedata><tw-passagedata pid="68" name="「真的存在啊。」" tags="" position="1500,1300" size="100,100">你活著，而且變得比較不怕晚回宿舍了。</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim
